@@ -43,4 +43,5 @@ znap source zsh-users/zsh-syntax-highlighting
 
 # Aliases
 alias nvim="~/nvim-linux64/bin/nvim"
+alias hx="~/helix-22.12-x86_64-linux/hx"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
