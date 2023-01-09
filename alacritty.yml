@@ -1,0 +1,25 @@
+shell:
+    program: "C:\\Windows\\System32\\wsl.exe"
+    args:
+        - --cd ~
+
+font:
+    normal:
+        family: Anonymice Nerd Font Mono
+    size: 14.0
+
+window:
+    startup_mode: Maximized
+    decorations: full
+
+cursor:
+    style:
+        shape: Underline
+        blinking: on
+    unfocused_hollow: false
+
+key_bindings:
+    - { key: F4, mods: Alt,     action: Quit             } 
+    - { key: C,  mods: Control, action: Copy             }
+    - { key: V,  mods: Control, action: Paste            }
+    - { key: N,  mods: Alt,     action: SpawnNewInstance }

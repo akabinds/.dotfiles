@@ -1,0 +1,1 @@
+/home/binds/code/.dotfiles/scripts/tmux-sessionizer.sh

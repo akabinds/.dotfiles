@@ -1,0 +1,13 @@
+theme = "tokyonight_night"
+
+[editor]
+line-number = "relative"
+bufferline = "multiple"
+
+[editor.cursor-shape]
+insert = "bar"
+
+[keys.normal]
+esc = ["collapse_selection", "keep_primary_selection"]
+"backspace" = { s = [":w", ":config-reload"] }
+"backspace" = { c = [":config-open"] }
