@@ -35,6 +35,11 @@ command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
 eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 
+# Node Version Manager Setup
+export NVM_DIR="$HOME/.config/nvm"
+[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
+[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
+
 # Znap
 source ~/repos/zsh-snap/znap.zsh
 znap source marlonrichert/zsh-autocomplete
@@ -42,6 +47,9 @@ znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
 
 # Aliases
-alias nvim="~/nvim-linux64/bin/nvim"
-alias hx="~/helix-22.12-x86_64-linux/hx"
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+
+# Environment Variables
+export UNTAR_DIR="$HOME/untar"
+export PATH="$UNTAR_DIR/nvim/bin:$PATH"
+export PATH="$UNTAR_DIR/helix:$PATH"

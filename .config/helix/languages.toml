@@ -9,6 +9,9 @@ comment-token = "//"
 language-server = { command = "rust-analyzer" }
 indent = { tab-width = 4, unit = "    " }
 
+[language.config]
+checkOnSave = { command = "clippy" }
+
 [[grammar]]
 name = "rust"
 source = { git = "https://github.com/tree-sitter/tree-sitter-rust", rev = "f7fb205c424b0962de59b26b931fe484e1262b35" }
@@ -144,22 +147,6 @@ name = "yaml"
 source = { git = "https://github.com/ikatyang/tree-sitter-yaml", rev = "0e36bed171768908f331ff7dff9d956bae016efb " }
 
 [[language]]
-name = "zig"
-scope = "source.zig"
-injection-regex = "zig"
-file-types = ["zig"]
-roots = ["build.zig"]
-auto-format = true
-comment-token = "//"
-language-server = { command = "zls" }
-indent = { tab-width = 4, unit = "    " }
-formatter = { command = "zig" , args = ["fmt", "--stdin"] }
-
-[[grammar]]
-name = "zig"
-source = { git = "https://github.com/maxxnino/tree-sitter-zig", rev = "d90d38d28ce8cc27bfea8b4e0c75211e9e2398ca" }
-
-[[language]]
 name = "cmake"
 scope = "source.cmake"
 file-types = ["cmake", "CMakeLists.txt"]
@@ -185,6 +172,15 @@ indent = { tab-width = 4, unit = "\t" }
 [[grammar]]
 name = "make"
 source = { git = "https://github.com/alemuller/tree-sitter-make", rev = "a4b9187417d6be349ee5fd4b6e77b4172c6827dd" }
+
+[[language]]
+name = "markdown"
+scope = "source.md"
+injection-regex = "md|markdown"
+file-types = ["md", "markdown"]
+roots = [".marksman.toml"]
+language-server = { command = "marksman", args=["server"] }
+indent = { tab-width = 2, unit = "  " }
 
 [[grammar]]
 name = "markdown"
