@@ -6,8 +6,9 @@
 # the unzipped tar file will replace it. Otherwise, a new directory will be created and the binary will be exported to `PATH`.
 
 TAR_LINK=$1
-TAR_FILE=$($TAR_LINK | sed 's:.*/::')
-TAR_DIR=$($TAR_FILE | sed 's/-.*//')
+TAR_FILE=$($TAR_LINK | awk -F'.' ' { print $NF }')
+TAR_FILE_EXT=$($TAR_FILE | awk -F'.' ' { print $NF }')
+# REPO_NAME=
 
 # Download the tar file into `/tmp`
 wget $TAR_LINK -P /tmp
@@ -15,7 +16,11 @@ wget $TAR_LINK -P /tmp
 # Unzip the tar file and output the unzipped result to `~/untar`
 cd /tmp
 
-tar -xf $TAR_FILE -C $UNTAR_DIR/$TAR_DIR
+if [ $TAR_FILE_EXT == "zst" ]; then
+  tar --use-compress-program=unzstd -xf $TAR_FILE -C $UNTAR_DIR/$REPO_NAME
+else
+  tar -xf $TAR_FILE -C $UNTAR_DIR/$REPO_NAME
+fi
 
-# TODO: check if folder with name `$TAR_FILE` already exists and override its contents with the contents of the unzipped tar file 
+# TODO: check if folder with name `$TAR_FILE` already exists and override its contents with the contents of the unzipped tar file which should be done above 
 # SCRIPT INCOMPLETE

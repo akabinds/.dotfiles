@@ -18,6 +18,7 @@ ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Path to oh-my-zsh installation.
 export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
 # Options
 zstyle ':omz:update' mode auto # update automatically without asking 
@@ -26,8 +27,6 @@ ENABLE_CORRECTION="true" # enable command autocorrection
 
 # Load plugins
 plugins=(git)
-
-source $ZSH/oh-my-zsh.sh
 
 # Pyenv Setup
 export PYENV_ROOT="$HOME/.pyenv"
@@ -53,3 +52,4 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 export UNTAR_DIR="$HOME/untar"
 export PATH="$UNTAR_DIR/nvim/bin:$PATH"
 export PATH="$UNTAR_DIR/helix:$PATH"
+export PATH="$UNTAR_DIR/lua-language-server:$PATH"

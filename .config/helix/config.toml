@@ -1,13 +1,17 @@
-theme = "tokyonight_night"
+theme = "tokyonight_storm"
 
 [editor]
 line-number = "relative"
 bufferline = "multiple"
+true-color = true
 
 [editor.cursor-shape]
-insert = "bar"
+insert = "underline"
 
 [keys.normal]
 esc = ["collapse_selection", "keep_primary_selection"]
-"backspace" = { s = [":w", ":config-reload"] }
-"backspace" = { c = [":config-open"] }
+backspace = { r = [":w", ":config-reload"], c = [":config-open"], p = [":buffer-previous"], n = [":buffer-next"], l = [":buffer-close"], o = [":buffer-close-others"] }
+C-s = ":w" # bind CTRL+S to saving the file
+A-s = ":x" # bind ALT+S to saving the file and exiting
+C-z = ":earlier" # bind CTRL+Z to undo an earlier action
+C-u = ":later" # bind CTRL+U to redo an action
