@@ -39,6 +39,9 @@ export NVM_DIR="$HOME/.config/nvm"
 [ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
 [ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
 
+# Kiex (Elixir version manager)
+test -s "$HOME/.kiex/scripts/kiex" && source "$HOME/.kiex/scripts/kiex"
+
 # Znap
 source ~/repos/zsh-snap/znap.zsh
 znap source marlonrichert/zsh-autocomplete
@@ -52,4 +55,5 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 export UNTAR_DIR="$HOME/untar"
 export PATH="$UNTAR_DIR/nvim/bin:$PATH"
 export PATH="$UNTAR_DIR/helix:$PATH"
-export PATH="$UNTAR_DIR/lua-language-server:$PATH"
+export PATH="$UNTAR_DIR/lua-language-server/bin:$PATH"
+export PATH="$HOME/elixir-ls:$PATH"

@@ -1,0 +1,14 @@
+#!/bin/zsh
+#
+# Open `lazygit` in the passed directory if it is initialized with a Git repo.
+
+DIR=$1
+
+if [ ! -d $DIR/.git ]; then 
+	echo "There is not a Git repository initialized in the given directory."
+	exit 1
+fi
+
+# CD into the passed directory and open it in `lazygit`
+cd $DIR
+lazygit
