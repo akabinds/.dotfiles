@@ -47,6 +47,7 @@ znap source zsh-users/zsh-syntax-highlighting
 
 # Aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+alias hxc="cargo install --locked --path $HOME/code/opensource/helix/helix-term && $HOME/.cargo/bin/hx"
 
 # Environment Variables
 export UNTAR_DIR="$HOME/untar"
