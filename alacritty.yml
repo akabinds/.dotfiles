@@ -14,7 +14,7 @@ window:
 
 cursor:
     style:
-        shape: Underline
+        shape: Beam
         blinking: on
     unfocused_hollow: false
 

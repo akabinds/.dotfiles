@@ -10,15 +10,8 @@ fi
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# If you come from bash you might have to change your $PATH.
-# export PATH=$HOME/bin:/usr/local/bin:$PATH
-
 # Set the zsh theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes for a list of themes.
 ZSH_THEME="powerlevel10k/powerlevel10k"
-
-# Path to oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
 
 # Options
 zstyle ':omz:update' mode auto # update automatically without asking 
@@ -27,6 +20,10 @@ ENABLE_CORRECTION="true" # enable command autocorrection
 
 # Load plugins
 plugins=(git)
+
+# Path to oh-my-zsh installation.
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
 
 # Pyenv Setup
 export PYENV_ROOT="$HOME/.pyenv"
