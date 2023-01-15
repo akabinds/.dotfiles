@@ -1,0 +1,81 @@
+"comment" = { fg = "comment", modifiers = ["italic"] }
+"constant" = { fg = "orange" }
+"constant.character.escape" = { fg = "magenta" }
+"function" = { fg = "blue", modifiers = ["italic"] }
+"function.macro" = { fg = "cyan" }
+"keyword" = { fg = "cyan", modifiers = ["italic"] }
+"keyword.control" = { fg = "magenta" }
+"keyword.control.import" = { fg = "cyan" }
+"keyword.operator" = { fg = "turquoise" }
+"keyword.function" = { fg = "magenta", modifiers = ["italic"] }
+"operator" = { fg = "turquoise" }
+"punctuation" = { fg = "turquoise" }
+"string" = { fg = "light-green" }
+"string.regexp" = { fg = "light-blue" }
+"tag" = { fg = "red" }
+"type" = { fg = "teal" }
+"namespace" = { fg = "blue" }
+"variable" = { fg = "white" }
+"variable.builtin" = { fg = "red" }
+"variable.other.member" = { fg = "green" }
+"variable.parameter" = { fg = "yellow", modifiers = ["italic"] }
+
+"diff.plus" = { fg = "green" }
+"diff.delta" = { fg = "orange" }
+"diff.minus" = { fg = "red" }
+
+"ui.background" = { fg = "foreground", bg = "background" }
+"ui.cursor" = { modifiers = ["reversed"] }
+"ui.cursor.match" = { fg = "orange", modifiers = ["bold"] }
+"ui.cursor.primary" = { modifiers = ["reversed"] }
+"ui.cursorline.primary" = { bg = "background_menu" }
+"ui.help" = { fg = "foreground", bg = "background_menu" }
+"ui.linenr" = { fg = "foreground_highlight" }
+"ui.linenr.selected" = { fg = "line_select" }
+"ui.menu" = { fg = "foreground", bg = "background_menu" }
+"ui.menu.selected" = { bg = "background_highlight" }
+"ui.popup" = { fg = "foreground", bg = "background_menu" }
+"ui.selection" = { bg = "background_highlight" }
+"ui.selection.primary" = { bg = "background_highlight" }
+"ui.statusline" = { fg = "foreground", bg = "background_menu" }
+"ui.statusline.inactive" = { fg = "foreground_gutter", bg = "background_menu" }
+"ui.statusline.normal" = { fg = "black", bg = "blue" }
+"ui.statusline.insert" = { fg = "black", bg = "green" }
+"ui.statusline.select" = { fg = "black", bg = "magenta" }
+"ui.text" = { fg = "foreground" }
+"ui.text.focus" = { fg = "cyan" }
+"ui.virtual.ruler" = { bg = "foreground_gutter" }
+"ui.virtual.whitespace" = { fg = "foreground" }
+"ui.window" = { fg = "black" }
+
+"error" = { fg = "red" }
+"warning" = { fg = "light_red" }
+"info" = { fg = "blue" }
+"hint" = { fg = "teal" }
+"diagnostic.error" = { underline = { style = "curl", color = "red" } }
+"diagnostic.warning" = { underline = { style = "curl", color = "light_red" } }
+"diagnostic.info" = { underline = { style = "curl", color = "blue" } }
+"diagnostic.hint" = { underline = { style = "curl", color = "teal" } }
+"special" = { fg = "orange" }
+
+"markup.heading" = { fg = "cyan", modifiers = ["bold"] }
+"markup.list" = { fg = "cyan" }
+"markup.bold" = { fg = "orange", modifiers = ["bold"] }
+"markup.italic" = { fg = "yellow", modifiers = ["italic"] }
+"markup.link.url" = { fg = "green" }
+"markup.link.text" = { fg = "light-gray" }
+"markup.quote" = { fg = "yellow", modifiers = ["italic"] }
+"markup.raw" = { fg = "cyan" }
+
+[palette]
+foreground = "#508a8c"
+background = "#151b31"
+foreground_highlight = "#606e74"
+background_highlight = "#33353F"
+background_menu = "#180f25"
+line_select = "#7dadab"
+red = "#aa3c28"
+light_red = "#e39471"
+blue = "#4ebeb5"
+orange = "#ffa500"
+teal = "#008080"
