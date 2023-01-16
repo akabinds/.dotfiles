@@ -1,26 +1,26 @@
 "comment" = { fg = "comment", modifiers = ["italic"] }
-"constant" = { fg = "orange" }
-"constant.character.escape" = { fg = "magenta" }
-"function" = { fg = "blue", modifiers = ["italic"] }
+"constant" = { fg = "#198397" }
+"constant.character.escape" = { fg = "#749aa5" }
+"function" = { fg = "#19717b", modifiers = ["italic"] }
 "function.macro" = { fg = "cyan" }
-"keyword" = { fg = "cyan", modifiers = ["italic"] }
-"keyword.control" = { fg = "magenta" }
+"keyword" = { fg = "#3c8592", modifiers = ["italic"] }
+"keyword.control" = { fg = "#749aa5" }
 "keyword.control.import" = { fg = "cyan" }
 "keyword.operator" = { fg = "turquoise" }
-"keyword.function" = { fg = "magenta", modifiers = ["italic"] }
-"operator" = { fg = "turquoise" }
-"punctuation" = { fg = "turquoise" }
-"string" = { fg = "light-green" }
+"keyword.function" = { fg = "#749aa5", modifiers = ["italic"] }
+"operator" = { fg = "#0d8ea0" }
+"punctuation" = { fg = "#0d8ea0" }
+"string" = { fg = "#739290" }
 "string.regexp" = { fg = "light-blue" }
-"tag" = { fg = "red" }
-"type" = { fg = "teal" }
+"tag" = { fg = "blue" }
+"type" = { fg = "#3d727a" }
 "namespace" = { fg = "blue" }
-"variable" = { fg = "white" }
-"variable.builtin" = { fg = "red" }
-"variable.other.member" = { fg = "green" }
-"variable.parameter" = { fg = "yellow", modifiers = ["italic"] }
+"variable" = { fg = "#1c9f9e" }
+"variable.builtin" = { fg = "#2a81b9" }
+"variable.other.member" = { fg = "#1c9f9e" }
+"variable.parameter" = { fg = "#1d909c", modifiers = ["italic"] }
 
-"diff.plus" = { fg = "green" }
+"diff.plus" = { fg = "#3d9e8d" }
 "diff.delta" = { fg = "orange" }
 "diff.minus" = { fg = "red" }
 
@@ -38,13 +38,13 @@
 "ui.selection" = { bg = "background_highlight" }
 "ui.selection.primary" = { bg = "background_highlight" }
 "ui.statusline" = { fg = "foreground", bg = "background_menu" }
-"ui.statusline.inactive" = { fg = "foreground_gutter", bg = "background_menu" }
+"ui.statusline.inactive" = { fg = "#2a7787", bg = "background_menu" }
 "ui.statusline.normal" = { fg = "black", bg = "blue" }
-"ui.statusline.insert" = { fg = "black", bg = "green" }
-"ui.statusline.select" = { fg = "black", bg = "magenta" }
+"ui.statusline.insert" = { fg = "black", bg = "#499688" }
+"ui.statusline.select" = { fg = "black", bg = "#749aa6" }
 "ui.text" = { fg = "foreground" }
 "ui.text.focus" = { fg = "cyan" }
-"ui.virtual.ruler" = { bg = "foreground_gutter" }
+"ui.virtual.ruler" = { bg = "#2a7787" }
 "ui.virtual.whitespace" = { fg = "foreground" }
 "ui.window" = { fg = "black" }
 
@@ -71,11 +71,12 @@
 foreground = "#508a8c"
 background = "#151b31"
 foreground_highlight = "#606e74"
-background_highlight = "#33353F"
-background_menu = "#180f25"
+background_highlight = "#344551"
+background_menu = "#041D2A"
 line_select = "#7dadab"
 red = "#aa3c28"
 light_red = "#e39471"
 blue = "#4ebeb5"
 orange = "#ffa500"
 teal = "#008080"
+comment = "#364144"
