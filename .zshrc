@@ -51,7 +51,10 @@ alias hxc="cargo install --locked --path $HOME/code/opensource/helix/helix-term 
 
 # Environment Variables
 export UNTAR_DIR="$HOME/untar"
+
 export PATH="$UNTAR_DIR/nvim/bin:$PATH"
 export PATH="$UNTAR_DIR/helix:$PATH"
 export PATH="$UNTAR_DIR/lua-language-server/bin:$PATH"
 export PATH="$HOME/elixir-ls:$PATH"
+export PATH="$UNTAR_DIR/zig:$PATH"
+export PATH="$HOME/zls/bin:$PATH"
