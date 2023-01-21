@@ -1,24 +1,24 @@
 "comment" = { fg = "comment", modifiers = ["italic"] }
 "constant" = { fg = "#198397" }
 "constant.character.escape" = { fg = "#749aa5" }
-"function" = { fg = "#19717b", modifiers = ["italic"] }
-"function.macro" = { fg = "cyan" }
-"keyword" = { fg = "#3c8592", modifiers = ["italic"] }
-"keyword.control" = { fg = "#749aa5" }
-"keyword.control.import" = { fg = "cyan" }
-"keyword.operator" = { fg = "turquoise" }
-"keyword.function" = { fg = "#749aa5", modifiers = ["italic"] }
-"operator" = { fg = "#0d8ea0" }
-"punctuation" = { fg = "#0d8ea0" }
-"string" = { fg = "#739290" }
-"string.regexp" = { fg = "light-blue" }
+"function" = { fg = "function", modifiers = ["italic"] }
+"function.macro" = { fg = "function" }
+"keyword" = { fg = "keyword", modifiers = ["italic"] }
+"keyword.control" = { fg = "keyword", modifiers = ["italic"] }
+"keyword.control.import" = { fg = "keyword" }
+"keyword.operator" = { fg = "keyword" }
+"keyword.function" = { fg = "keyword", modifiers = ["italic"] }
+"operator" = { fg = "#0898c2" }
+"punctuation" = { fg = "#2f9fd8" }
+"string" = { fg = "string" }
+"string.regexp" = { fg = "string" }
 "tag" = { fg = "blue" }
-"type" = { fg = "#3d727a" }
-"namespace" = { fg = "blue" }
-"variable" = { fg = "#1c9f9e" }
+"type" = { fg = "#076f73" }
+"namespace" = { fg = "#076f73" }
+"variable" = { fg = "variable" }
 "variable.builtin" = { fg = "#2a81b9" }
-"variable.other.member" = { fg = "#1c9f9e" }
-"variable.parameter" = { fg = "#1d909c", modifiers = ["italic"] }
+"variable.other.member" = { fg = "variable" }
+"variable.parameter" = { fg = "variable", modifiers = ["italic"] }
 
 "diff.plus" = { fg = "#3d9e8d" }
 "diff.delta" = { fg = "orange" }
@@ -80,3 +80,7 @@ blue = "#4ebeb5"
 orange = "#ffa500"
 teal = "#008080"
 comment = "#364144"
+function = "#0c97ee"
+keyword = "#4688b6"
+string = "#258c98"
+variable = "#74899f"
