@@ -1,0 +1,28 @@
+#!/bin/zsh
+#
+# Sync all forked repositories with new changes from the upstream.
+
+# `~/code/opensource` is where all my forks of opensource projects reside
+cd ~/code/opensource 
+
+for d in */ ; do
+	cd ~/code/opensource/$d
+
+	# I might have forgot to set an upstream 
+	if ! git remote show upstream >/dev/null ; then
+		echo "Unable to find an upstream remote"
+		continue
+	fi
+
+	DEFAULT_BRANCH=$(git symbolic-ref refs/remotes/origin/HEAD | sed 's@^refs/remotes/origin/@@')
+
+	git fetch upstream 
+	git branch --show-current != $DEFAULT_BRANCH >/dev/null && git checkout $DEFAULT_BRANCH
+
+	if [[ "$(git rebase upstream/$DEFAULT_BRANCH)" =~ "up to date" ]] ; then
+		echo "$DEFAULT_BRANCH is up to date"
+		continue
+	fi
+	
+	git push
+done
