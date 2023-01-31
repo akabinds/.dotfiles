@@ -22,7 +22,10 @@ fi
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Set the zsh theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes for a list of themes.
-ZSH_THEME="powerlevel10k/powerlevel10k"
+ZSH_THEME="typewritten"
+export TYPEWRITTEN_PROMPT_LAYOUT="pure_verbose"
+export TYPEWRITTEN_RELATIVE_PATH="adaptive"
+export TYPEWRITTEN_LEFT_PROMPT_PREFIX_FUNCTION=(date +"%T")
 
 # Options
 zstyle ':omz:update' mode auto # update automatically without asking 
