@@ -5,7 +5,7 @@ shell:
 
 font:
     normal:
-        family: Anonymice Nerd Font Mono
+        family: Hack NFM
     size: 14.0
 
 window:
@@ -15,7 +15,7 @@ window:
 cursor:
     style:
         shape: Beam
-        blinking: on
+        blinking: On
     unfocused_hollow: false
 
 key_bindings:

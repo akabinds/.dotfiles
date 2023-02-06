@@ -1,14 +1,11 @@
 vim.cmd [[packadd packer.nvim]]
 
-return require("packer").startup(function(use) 
-    use "wbthomason/packer.nvim"
+return require("packer").startup(function(use)
+	use "wbthomason/packer.nvim"
 
     use {
 		"nvim-telescope/telescope.nvim", tag = "0.1.0",
 		requires = { { "nvim-lua/plenary.nvim" }, { "kdheepak/lazygit.nvim" } },
-		config = function() 
-			require("telescope").load_extension("lazygit")
-		end,
     }
 
     use {
@@ -48,6 +45,16 @@ return require("packer").startup(function(use)
 		}
 	}
 
+	use {
+		"folke/trouble.nvim",
+		requires = "nvim-tree/nvim-web-devicons"
+	}
+
+	use {
+		"folke/noice.nvim",
+		requires = "MunifTanjim/nui.nvim"
+	}
+
 	use "Pocco81/true-zen.nvim"
     use "nvim-treesitter/playground"
     use "tpope/vim-commentary"
@@ -57,8 +64,13 @@ return require("packer").startup(function(use)
     use "terryma/vim-multiple-cursors"
     use "itmammoth/doorboy.vim"
     use "theprimeagen/harpoon"
-    use "mbbill/undotree"
+    use "mbbill/undotree" 
 	use "preservim/tagbar"
-	use "folke/tokyonight.nvim"
+	use "folke/tokyonight.nvim" 
 	use "Pocco81/auto-save.nvim"
+	use "folke/lsp-colors.nvim"	
+	use "goolord/alpha-nvim"
+	use "windwp/nvim-spectre"
+	use "windwp/nvim-autopairs"
+	use "numToStr/Comment.nvim"
 end)

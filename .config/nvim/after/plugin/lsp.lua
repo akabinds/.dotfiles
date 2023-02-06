@@ -9,7 +9,7 @@ lsp.ensure_installed({
 	"sumneko_lua"
 })
 
-lsp.on_attach(function(client, buf) 
+lsp.on_attach(function(client, buf)
 	local opts = { buffer = buf, remap = false }
 
 	vim.keymap.set("n", "gd", vim.lsp.buf.definition, opts)

@@ -1,5 +1,3 @@
-local autosave = require("auto-save")
-
-autosave.setup {
+require("auto-save").setup({
     debounce_delay = 3
-}
+})

@@ -14,18 +14,19 @@ export PYTHON_CONFIGURE_OPTS="--enable-shared"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-  source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-fi
+# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+# fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Set the zsh theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes for a list of themes.
 ZSH_THEME="typewritten"
 export TYPEWRITTEN_PROMPT_LAYOUT="pure_verbose"
 export TYPEWRITTEN_RELATIVE_PATH="adaptive"
 export TYPEWRITTEN_LEFT_PROMPT_PREFIX_FUNCTION=(date +"%T")
+export TYPEWRITTEN_CURSOR="beam"
 
 # Options
 zstyle ':omz:update' mode auto # update automatically without asking 
