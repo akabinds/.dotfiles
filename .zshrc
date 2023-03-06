@@ -4,6 +4,12 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
 
+# Znap
+source ~/znap/repo/znap.zsh
+znap source marlonrichert/zsh-autocomplete
+znap source zsh-users/zsh-autosuggestions
+znap source zsh-users/zsh-syntax-highlighting
+
 # Pyenv Setup
 export PYENV_ROOT="$HOME/.pyenv"
 command -v pyenv >/dev/null || export PATH="$PYENV_ROOT/bin:$PATH"
@@ -36,20 +42,8 @@ plugins=(git)
 export ZSH="$HOME/.oh-my-zsh"
 source $ZSH/oh-my-zsh.sh
 
-# Node Version Manager Setup
-export NVM_DIR="$HOME/.config/nvm"
-[ -s "$NVM_DIR/nvm.sh" ] && \. "$NVM_DIR/nvm.sh" 
-[ -s "$NVM_DIR/bash_completion" ] && \. "$NVM_DIR/bash_completion" 
-
-# Znap
-source ~/repos/zsh-snap/znap.zsh
-znap source marlonrichert/zsh-autocomplete
-znap source zsh-users/zsh-autosuggestions
-znap source zsh-users/zsh-syntax-highlighting
-
 # Aliases
 alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
-alias hxc="cargo install --locked --path $HOME/code/opensource/helix/helix-term && $HOME/.cargo/bin/hx"
 
 # Environment Variables
 export SOURCE_BUILD_DIR="$HOME/source"
