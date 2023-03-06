@@ -5,7 +5,7 @@ shell:
 
 font:
     normal:
-        family: Hack NFM
+        family: Iosevka    
     size: 14.0
 
 window:

@@ -14,19 +14,15 @@ export PYTHON_CONFIGURE_OPTS="--enable-shared"
 # Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
 # Initialization code that may require console input (password prompts, [y/n]
 # confirmations, etc.) must go above this block; everything else may go below.
-# if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
-#   source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
-# fi
+if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
+    source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
+fi
 
 # To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
-# [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
 # Set the zsh theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes for a list of themes.
-ZSH_THEME="typewritten"
-export TYPEWRITTEN_PROMPT_LAYOUT="pure_verbose"
-export TYPEWRITTEN_RELATIVE_PATH="adaptive"
-export TYPEWRITTEN_LEFT_PROMPT_PREFIX_FUNCTION=(date +"%T")
-export TYPEWRITTEN_CURSOR="beam"
+ZSH_THEME="powerlevel10k/powerlevel10k"
 
 # Options
 zstyle ':omz:update' mode auto # update automatically without asking 
@@ -56,7 +52,7 @@ alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 alias hxc="cargo install --locked --path $HOME/code/opensource/helix/helix-term && $HOME/.cargo/bin/hx"
 
 # Environment Variables
-export UNTAR_DIR="$HOME/untar"
-export PATH="$UNTAR_DIR/nvim/bin:$PATH"
-export PATH="$UNTAR_DIR/helix:$PATH"
-export PATH="$UNTAR_DIR/lua-language-server/bin:$PATH"
+export SOURCE_BUILD_DIR="$HOME/source"
+export PATH="$SOURCE_BUILD_DIR/nvim/bin:$PATH"
+export PATH="$SOURCE_BUILD_DIR/helix:$PATH"
+export PATH="$SOURCE_BUILD_DIR/lua-language-server/bin:$PATH"
