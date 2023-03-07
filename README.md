@@ -4,27 +4,24 @@ This repository contains the dotfiles for my development environment.
 
 ## Before Installation
 
-- 1 Update package information
+- Update package information:
     ```sh
     sudo apt update
     ```
 
-- 2 Ensure that you have `zsh` installed and have properly set it as your default shell before running the install script
-    **Step 1**:
+- Ensure `zsh` is installed:
     ```sh
     sudo apt install zsh
     ```
-    You can verify the installation was successful by running `zsh --version`.
+    Confirm by running `zsh --version`.
 
-    **Step 2**:
+- Set `zsh` as your default shell:
     ```sh
-    chsh -s $(which zsh)  
+    chsh -s $(which shell)
     ```
+    Log out and log back in after. Confirm by running `echo $SHELL`. Expect to see `/bin/zsh` or similar.
 
-    **Step 3**:
-    Logout and log back in. After logging back in, you can verify that it is now your default shell by running `echo $SHELL`. The expected result is `/bin/zsh` or similar.
-
-- 3 Ensure that `git` is installed (if it isn't already):
+- Ensure `git` is installed (if it isn't already):
     ```sh
     sudo apt install git
     ```

@@ -1,5 +1,10 @@
 #!/bin/zsh
 
+# ################################### #
+#        CONSOLE I/O REQUIRED         #
+# ################################### #
+
+# attach back to defualt tmux session if possible, otherwise create a new session.
 if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
     tmux attach -t default || tmux new -s default
 fi
@@ -17,33 +22,52 @@ eval "$(pyenv init -)"
 eval "$(pyenv virtualenv-init -)"
 export PYTHON_CONFIGURE_OPTS="--enable-shared"
 
-# Enable Powerlevel10k instant prompt. Should stay close to the top of ~/.zshrc.
-# Initialization code that may require console input (password prompts, [y/n]
-# confirmations, etc.) must go above this block; everything else may go below.
+
+# ################################### #
+#                THEME                #
+# ################################### #
+
+# Enable Powerlevel10k instant prompt. Initialization requiring console I/O should go above.
 if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]; then
     source "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh"
 fi
 
-# To customize prompt, run `p10k configure` or edit ~/.p10k.zsh.
+# Source Powerlevel10k configuration.
 [[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
 
-# Set the zsh theme. See https://github.com/ohmyzsh/ohmyzsh/wiki/Themes for a list of themes.
+# Set ZSH theme.
 ZSH_THEME="powerlevel10k/powerlevel10k"
+
+
+# ################################### #
+#              OH MY ZSH              #
+# ################################### #
+
+export ZSH="$HOME/.oh-my-zsh"
+source $ZSH/oh-my-zsh.sh
+
+# Plugins
+plugins=(git)
 
 # Options
 zstyle ':omz:update' mode auto # update automatically without asking 
 zstyle ':omz:update' frequency 7 # update every 7 days
+
+
+# ################################### #
+#               GENERAL               #
+# ################################### #
+
+aliases () {
+    alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+}
+
+precmd () {
+    aliases
+}
+
+# Options
 ENABLE_CORRECTION="true" # enable command autocorrection
-
-# Load plugins
-plugins=(git)
-
-# Path to oh-my-zsh installation.
-export ZSH="$HOME/.oh-my-zsh"
-source $ZSH/oh-my-zsh.sh
-
-# Aliases
-alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
 
 # Environment Variables
 export SOURCE_BUILD_DIR="$HOME/source"
