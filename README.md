@@ -17,7 +17,7 @@ This repository contains the dotfiles for my development environment.
 
 - Set `zsh` as your default shell:
     ```sh
-    chsh -s $(which shell)
+    chsh -s $(which zsh)
     ```
     Log out and log back in after. Confirm by running `echo $SHELL`. Expect to see `/bin/zsh` or similar.
 
