@@ -3,7 +3,7 @@
 set -e
 
 info () {
-  printf "\r  [ \033[00;34m..\033[0m ] $1\n"
+  printf "\r  [ \033[00;34mINFO\033[0m ] $1\n"
 }
 
 success () {
@@ -23,7 +23,7 @@ check_if_dep_installed () {
 
 install_dep () {
   info "Installing $1"
-  sudo apt-get -y install $1 && success "Installed $1" || fail "Could not install $1" 
+  sudo apt-get -y install $1 >/dev/null && success "Installed $1" || fail "Could not install $1" 
 }
 
 info "Ensuring zsh is the default shell"
@@ -34,7 +34,7 @@ check_if_dep_installed "git"
 check_if_dep_installed "curl"
 
 info "Updating repositories"
-sudo apt-get -y update && sudo apt-get -y upgrade && success "Updated apt repositories" || fail "Could not update apt repositories"
+sudo apt-get -y update >/dev/null && sudo apt-get -y upgrade >/dev/null && success "Updated apt repositories" || fail "Could not update apt repositories"
   
 info "Installing dependencies"
 
@@ -50,5 +50,12 @@ git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$
 info "Installing pyenv"
 curl https://pyenv.run | zsh && success "Installed pyenv" || fail "Could not install pyenv"
 
-info "Cloning dotfiles"
-git clone --bare https://github.com/akabinds/.dotfiles.git $HOME/.dotfiles && success "Cloned dotfiles" || fail "Could not clone dotfiles"
+info "Cloning bare dotfiles repository"
+git clone --bare https://github.com/akabinds/.dotfiles.git $HOME/.dotfiles && success "Cloned bare dotfiles repository" || fail "Could not clone bare dotfiles repository"
+
+dotfiles () {
+  git --git-dir=$HOME/.dotfiles --work-tree=$HOME $1
+}
+
+info "Checking out dotfiles"
+dotfiles checkout -f && success "Checked out dotfiles" || fail "Could not checkout dotfiles"
