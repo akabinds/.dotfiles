@@ -10,7 +10,8 @@ if command -v tmux &> /dev/null && [ -z "$TMUX" ]; then
 fi
 
 # Znap
-source ~/znap/repo/znap.zsh
+[[ ! -f $HOME/znap/repo/znap.zsh ]] && git clone --depth 1 -- https://github.com/marlonrichert/zsh-snap.git $HOME/znap/repo
+source $HOME/znap/repo/znap.zsh
 znap source marlonrichert/zsh-autocomplete
 znap source zsh-users/zsh-autosuggestions
 znap source zsh-users/zsh-syntax-highlighting
@@ -33,7 +34,7 @@ if [[ -r "${XDG_CACHE_HOME:-$HOME/.cache}/p10k-instant-prompt-${(%):-%n}.zsh" ]]
 fi
 
 # Source Powerlevel10k configuration.
-[[ ! -f ~/.p10k.zsh ]] || source ~/.p10k.zsh
+[[ ! -f $HOME/.p10k.zsh ]] || source $HOME/.p10k.zsh
 
 # Set ZSH theme.
 ZSH_THEME="powerlevel10k/powerlevel10k"
