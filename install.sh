@@ -23,7 +23,7 @@ check_if_dep_installed () {
 
 install_dep () {
   info "Installing $1"
-  sudo apt-get -y install $1 && success "Successfully installed $1" || fail "Failed to install $1" 
+  sudo apt-get -y install $1 && success "Installed $1" || fail "Could not install $1" 
 }
 
 info "Ensuring zsh is the default shell"
@@ -31,23 +31,24 @@ echo $SHELL | grep -q "zsh" || fail "zsh is not the default shell"
 
 check_if_dep_installed "zsh"
 check_if_dep_installed "git"
+check_if_dep_installed "curl"
 
 info "Updating repositories"
-sudo apt-get -y update && sudo apt-get -y upgrade && success "Successfully updated repositories" || fail "Failed to update repositories"
+sudo apt-get -y update && sudo apt-get -y upgrade && success "Updated apt repositories" || fail "Could not update apt repositories"
   
 info "Installing dependencies"
 
-install_dep "curl"
 install_dep "tmux"
+install_dep "gh"
 
 info "Installing Oh My Zsh"
-sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && success "Successfully installed Oh My Zsh" || fail "Failed to install Oh My Zsh"
+sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/tools/install.sh)" && success "Installed Oh My Zsh" || fail "Could not install Oh My Zsh"
 
 info "Installing Powerlevel10k"
-git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && success "Successfully installed Powerlevel10k" || fail "Failed to install Powerlevel10k"
+git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && success "Installed Powerlevel10k" || fail "Could not install Powerlevel10k"
 
 info "Installing pyenv"
-curl https://pyenv.run | zsh && success "Successfully installed pyenv" || fail "Failed to install pyenv"
+curl https://pyenv.run | zsh && success "Installed pyenv" || fail "Could not install pyenv"
 
 info "Cloning dotfiles"
-git clone --bare https://github.com/akabinds/.dotfiles.git $HOME/.dotfiles && success "Successfully cloned dotfiles" || fail "Failed to clone dotfiles"
+git clone --bare https://github.com/akabinds/.dotfiles.git $HOME/.dotfiles && success "Cloned dotfiles" || fail "Could not clone dotfiles"

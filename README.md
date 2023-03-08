@@ -9,6 +9,11 @@ This repository contains the dotfiles for my development environment.
     sudo apt update
     ```
 
+- Install `git`, `curl`, and `wget` (if they aren't installed already):
+    ```sh
+    sudo apt install -y git curl wget
+    ```
+
 - Ensure `zsh` is installed:
     ```sh
     sudo apt install -y zsh
@@ -21,10 +26,6 @@ This repository contains the dotfiles for my development environment.
     ```
     Log out and log back in after. Confirm by running `echo $SHELL`. Expect to see `/bin/zsh` or similar.
 
-- Ensure `git` is installed (if it isn't already):
-    ```sh
-    sudo apt install -y git
-    ```
 
 ## Installation
 
@@ -32,10 +33,10 @@ Install the dotfiles by running the following command:
 
 **curl**
 ```sh
-curl -Ls https://raw.githubusercontent.com/akabinds/.dotfiles/master/install.sh | bash
+curl -fsSL https://raw.githubusercontent.com/akabinds/.dotfiles/master/install.sh | zsh
 ```
 
 **wget**
 ```sh
-wget -q -O - https://raw.githubusercontent.com/akabinds/.dotfiles/master/install.sh | bash
+wget -q -O - https://raw.githubusercontent.com/akabinds/.dotfiles/master/install.sh | zsh
 ```
