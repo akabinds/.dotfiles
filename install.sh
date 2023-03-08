@@ -27,7 +27,7 @@ install_dep () {
 }
 
 info "Ensuring zsh is the default shell"
-echo $SHELL | less -p "zsh" || fail "zsh is not the default shell"
+echo $SHELL | grep -q "zsh" || fail "zsh is not the default shell"
 
 check_if_dep_installed "zsh"
 check_if_dep_installed "git"
