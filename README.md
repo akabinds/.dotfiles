@@ -11,7 +11,7 @@ This repository contains the dotfiles for my development environment.
 
 - Ensure `zsh` is installed:
     ```sh
-    sudo apt install zsh
+    sudo apt install -y zsh
     ```
     Confirm by running `zsh --version`.
 
@@ -23,7 +23,7 @@ This repository contains the dotfiles for my development environment.
 
 - Ensure `git` is installed (if it isn't already):
     ```sh
-    sudo apt install git
+    sudo apt install -y git
     ```
 
 ## Installation
