@@ -60,7 +60,7 @@ zstyle ':omz:update' frequency 7 # update every 7 days
 # ################################### #
 
 aliases () {
-    alias dotfiles="/usr/bin/git --git-dir=$HOME/dotfiles --work-tree=$HOME"
+    alias dotfiles="/usr/bin/git --git-dir=$HOME/.dotfiles --work-tree=$HOME"
 }
 
 precmd () {
