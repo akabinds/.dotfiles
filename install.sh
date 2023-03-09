@@ -48,7 +48,7 @@ info "Installing Powerlevel10k"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && success "Installed Powerlevel10k" || fail "Could not install Powerlevel10k"
 
 info "Installing Tmux Plugin Manager"
-git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm && success "Installed Tmux Plugin Manager" || fail "Could not install Tmux Plugin Manager"
 
 info "Installing pyenv"
 curl https://pyenv.run | zsh && success "Installed pyenv" || fail "Could not install pyenv"
