@@ -47,6 +47,9 @@ sh -c "$(curl -fsSL https://raw.githubusercontent.com/ohmyzsh/ohmyzsh/master/too
 info "Installing Powerlevel10k"
 git clone --depth=1 https://github.com/romkatv/powerlevel10k.git ${ZSH_CUSTOM:-$HOME/.oh-my-zsh/custom}/themes/powerlevel10k && success "Installed Powerlevel10k" || fail "Could not install Powerlevel10k"
 
+info "Installing Tmux Plugin Manager"
+git clone https://github.com/tmux-plugins/tpm $HOME/.tmux/plugins/tpm
+
 info "Installing pyenv"
 curl https://pyenv.run | zsh && success "Installed pyenv" || fail "Could not install pyenv"
 
